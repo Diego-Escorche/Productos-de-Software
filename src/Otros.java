@@ -19,14 +19,10 @@ public class Otros {
                     3. Usar otras operaciones.
                     4. Salir.""");
             String ans = scan.nextLine();
-            switch (ans){
-                case "1":
-                    p2.interfaz();
-                    break;
-                case "2":
-                    p1.interfaz();
-                    break;
-                case "3":
+            switch (ans) {
+                case "1" -> p2.interfaz();
+                case "2" -> p1.interfaz();
+                case "3" -> {
                     boolean es1 = false;
                     while (!es1) {
                         System.out.println("""
@@ -34,33 +30,28 @@ public class Otros {
                                 2. Ver las pilas. Con el orden de como se apilaron los elementos.
                                 3. Salir""");
                         ans = scan.nextLine();
-                        switch (ans){
-                            case "1":
-                                where(p1,p2);
-                                break;
-                            case "2":
-                                imprimir(p1,p2);
-                                break;
-                            case "3":
-                                es1 = true;
-                                break;
-                            default:
-                                System.out.println("No reconocido.");
+                        switch (ans) {
+                            case "1" -> where(p1, p2);
+                            case "2" -> imprimir(p1, p2);
+                            case "3" -> es1 = true;
+                            default -> System.out.println("No reconocido.");
                         }
-                        if (!es1){
+                        if (!es1) {
                             System.out.println("Presione 'ENTER' para continuar.");
                             scan.nextLine();
                         }
                     }
-                    break;
-                case "4":
+                }
+                case "4" -> {
                     es = true;
                     System.out.println("Hasta luego!");
-                default:
-                    System.out.println("No se ingreso una opcion valida. Intente de nuevo.");
+                }
+                default -> System.out.println("No se ingreso una opcion valida. Intente de nuevo.");
             }
-            System.out.println("Presione enter para continuar.");
-            scan.nextLine();
+            if(!es) {
+                System.out.println("Presione enter para continuar.");
+                scan.nextLine();
+            }
         }
     }
 
@@ -134,11 +125,11 @@ public class Otros {
         System.out.println("Que numero desea buscar?: ");
         int n = scan.nextInt();
         scan.nextLine();
-        if(in_Dinamica(p,n) == true && in_Estatica(p1,n) == true){
+        if(in_Dinamica(p, n) && in_Estatica(p1, n)){
             System.out.println("El numero " + n + " se encuentra en ambas pilas.");
-        } else if(in_Dinamica(p,n) == true){
+        } else if(in_Dinamica(p, n)){
             System.out.println("El numero " + n + " se encuentra en la pila dinamica: " + p.nombre);
-        } else if(in_Estatica(p1,n) == true){
+        } else if(in_Estatica(p1, n)){
             System.out.println("El numero " + n + " se encuentra en la pila estatica: " + p1.nombre);
         } else{
             System.out.println("No se encontro en ninguna pila el numero " + n);

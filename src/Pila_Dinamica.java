@@ -52,11 +52,7 @@ public class Pila_Dinamica {
      * @return Si devuelve true la pila esta vacia, de lo contrario esta vacia.
      */
     public boolean pilaVacia(){
-        if (pila.size() != 0){
-            return false;
-        } else {
-            return true;
-        }
+        return pila.size() == 0;
     }
     public void interfaz(){
         boolean es = false;
@@ -94,7 +90,7 @@ public class Pila_Dinamica {
                     break;
                 case "5":
                     System.out.println("\n");
-                    for (int i = pila.size()-1; i >= 0; i--){
+                    for (int i = 0; i < pila.size(); i++){
                         System.out.println(pila.get(i));
                     }
                     System.out.println("\n" + nombre + "\n");
