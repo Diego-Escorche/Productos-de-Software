@@ -1,4 +1,4 @@
 # Universidad
- Proyectos hechos en la facultad.
+Productos de Software hechos en el 4to semestre de la carrera de Ingenieria Informatica.
 
- Hecho por Diego Escorche.
+ Hecho por Diego Escorche, Celeste Gramisci y Audrey Barrientos.
