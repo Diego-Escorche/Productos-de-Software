@@ -57,6 +57,7 @@ public class Pila_Estatica {
 				pila[i] = pila[i+1];
 			}
 		}
+		pila[pila.length-1] = -1;
 	}
 
 	/**
@@ -85,11 +86,7 @@ public class Pila_Estatica {
 	 * @return Devuelve true si esta llena. False si no lo esta.
 	 */
 	public boolean pilaLlena(){
-		if (pila[pila.length-1] != -1){
-			return true;
-		} else{
-			return false;
-		}
+		return pila[pila.length - 1] != -1;
 	}
 	public void interfaz(){
 		boolean es = false;
@@ -116,8 +113,12 @@ public class Pila_Estatica {
 					}
 					break;
 				case "2":
-					desapilarElemento();
-					System.out.println("Desapilado!");
+					if(!pilaVacia()) {
+						desapilarElemento();
+						System.out.println("Desapilado!");
+					} else {
+						System.out.println("No hay ningun elemento para desapilar en la pila.");
+					}
 					break;
 				case "3":
 					System.out.println("El tope de la pila es: " + topePila());

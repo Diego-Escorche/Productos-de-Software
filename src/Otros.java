@@ -144,7 +144,7 @@ public class Otros {
         System.out.println("\n" + "Pila estatica: " + p1.nombre + "\n");
         n = 1;
         for (int i = p1.pila.length-1; i >= 0; i--){
-            if (p1.pila[i] != 0){
+            if (p1.pila[i] != -1){
                 System.out.println(n + ". " + p1.pila[i]);
                 n++;
             }
